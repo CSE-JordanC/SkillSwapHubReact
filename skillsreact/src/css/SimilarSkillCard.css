@@ -1,0 +1,15 @@
+.similar-card {
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 260px;
+}
+  
+.similar-card img {
+    width: 180px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}

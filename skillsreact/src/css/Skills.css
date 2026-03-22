@@ -1,0 +1,198 @@
+.skills-page .hero-compact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    padding: 48px 36px;
+    background: var(--white);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .cards-section {
+    background: var(--gray-1);
+    padding: 32px 20px 48px;
+  }
+  
+  .skills-page .hero-copy {
+    flex: 1 1 420px;
+    min-width: 260px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+  }
+  
+  .skills-page .hero-compact-title {
+    font-size: 35px;
+    color: var(--blue-900);
+    font-weight: 700;
+    margin: 0 0 12px 0;
+    line-height: 1.05;
+  }
+  
+  .skills-page .hero-compact-sub {
+    font-size: 20px;
+    margin: 0 0 20px 0;
+    color: #111;
+  }
+  
+  .skills-page .hero-compact-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .skills-page .hero-compact-art {
+    flex: 1 1 380px;
+    min-width: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skills-page .hero-compact-art img {
+    max-width: 880px;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+  
+  .skills-page .search-heading {
+    max-width: 1100px;
+    margin: 30px auto 10px;
+    text-align: center;
+  }
+  
+  .skills-page .search-heading p {
+    font-size: 28px;
+    font-weight: 500;
+    margin: 0;
+    position: relative;
+  }
+  
+  .skills-page .search-heading p::before,
+  .skills-page .search-heading p::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 35%;
+    height: 2px;
+    background: #333;
+  }
+  
+  .skills-page .search-heading p::before {
+    left: -40%;
+  }
+  
+  .skills-page .search-heading p::after {
+    right: -40%;
+  }
+  
+  .skills-page .content-area {
+    background: var(--gray-1);
+    padding: 32px 20px 48px;
+  }
+  
+  .skills-page .cards-grid {
+    max-width: 1100px;
+    margin: 12px auto 0;
+    padding: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+  }
+  
+  .skills-page .skill-card {
+    min-height: 320px;
+  }
+  
+  .skills-page .pagination {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+    align-items: center;
+    margin: 28px 0;
+    padding: 0;
+  }
+  
+  .skills-page .page-btn {
+    min-width: 60px;
+    height: 40px;
+    padding: 12px 18px;
+    background: #ffffff;
+    border: 2px solid var(--blue-700);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--blue-700);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    appearance: none;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .skills-page .search-actions {
+      flex-direction: column;
+    }
+  
+    .skills-page .search-btn,
+    .skills-page .filter-btn {
+      width: 100%;
+      flex: none;
+    }
+  
+    .skills-page .search-btn {
+      padding: 14px;
+      font-size: 18px;
+    }
+  
+    .skills-page .filter-btn {
+      padding: 12px;
+      font-size: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 767px) {
+    .skills-page .hero-compact {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 28px 18px;
+    }
+  
+    .skills-page .hero-compact-art img {
+      max-width: 100%;
+    }
+  
+    .skills-page .search-actions {
+      gap: 10px;
+    }
+  
+    .skills-page .cards-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  
+    .skills-page .pagination {
+      gap: 4px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding: 10px 12px;
+    }
+  
+    .skills-page .page-btn {
+      min-width: 25px;
+      height: 25px;
+      font-size: 18px;
+      border-radius: 10px;
+    }
+  }

@@ -1,0 +1,44 @@
+.sidebar {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+    height: fit-content;
+  }
+  
+  .sidebar .btn {
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+  
+  .btn-message {
+    background: #1b6f83;
+    color: white;
+    border: none;
+  }
+  
+  .btn-save {
+    background: var(--accent);
+    color: white;
+    border: none;
+  }
+  
+  .price {
+    font-size: 22px;
+    color: var(--blue-900);
+    font-weight: 700;
+  }
+  
+  .price span {
+    font-size: 14px;
+    color: #444;
+    font-weight: 400;
+  }
+  
+  .availability {
+    font-size: 16px;
+  }
