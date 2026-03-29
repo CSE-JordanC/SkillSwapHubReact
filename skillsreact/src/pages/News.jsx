@@ -1,6 +1,8 @@
 import "../css/News.css";
 import NewsCard from "../components/NewsCard";
 import EventCard from "../components/EventCard";
+import ContactForm from "../components/ContactForm";
+import Video from "../components/Video";
 
 import heroImage from "../images/communityspotlight.png";
 import skillShareNight from "../images/skillsharenight.png";
@@ -37,9 +39,7 @@ const News = () => {
               expandable
               detail={
                 <>
-                  <p>
-                    <strong>SkillShare Night — April 22</strong>
-                  </p>
+                  <p><strong>SkillShare Night — April 22</strong></p>
                   <p>Join us at the Community Hall from 6:00–9:00 PM for a hands-on evening of mini-workshops.</p>
                   <ul>
                     <li>Intro to Git & GitHub (beginners)</li>
@@ -47,8 +47,7 @@ const News = () => {
                     <li>Portrait photography tips</li>
                     <li>Quick watercolor techniques</li>
                   </ul>
-                  <p>Bring a laptop for the coding session and any small items you'd like to upcycle. 
-                    Doors open at 5:45 — workshops start at 6:15. Tickets are free but limited.</p>
+                  <p>Doors open at 5:45 — workshops start at 6:15. Tickets are free but limited.</p>
                 </>
               }
             />
@@ -70,7 +69,6 @@ const News = () => {
 
           <aside className="news-sidebar">
             <div className="events-header-side">Upcoming Events</div>
-
             <EventCard date="April 11" title="Free Coding Class" subtitle="Read about our most talked about night." />
             <EventCard date="April 22" title="SkillShare Night" subtitle="One of our biggest events of the year." />
           </aside>
@@ -78,24 +76,14 @@ const News = () => {
           <section className="contact-list">
             <div className="events-header-bottom">Contact Us</div>
             <div className="event-card">
-              <section id="contact-us">
-                <div className="event-date">Want to get in touch with us?</div>
-                <p>
-                  Just send us a message with any questions or concerns and we'll make sure to respond within 1-3 days.
-                </p>
-                <p>Email: support@skillswaphub.com</p>
-                <p>Phone: (555) 123-4567</p>
-              </section>
+              <ContactForm />
             </div>
           </section>
 
           <aside className="howto-sidebar">
             <div className="events-header-bottom-side">Skill Swap Guide</div>
             <div className="event-card">
-              <div className="event-date-bottom">Educational Video</div>
-              <p style={{ textAlign: "center" }}>
-                The video embed is not required yet for this assignment, so this area is left as a static guide section.
-              </p>
+              <Video />
             </div>
           </aside>
         </div>

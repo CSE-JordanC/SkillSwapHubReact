@@ -46,3 +46,14 @@
       align-items: flex-start;
     }
   }
+
+  @media only screen and (max-width: 767px) {
+    #main-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .auth {
+      align-self: flex-start;
+    }
+  }
