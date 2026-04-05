@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SkillSwapHubReact/static/css/main.51bb18ac.css",
-    "main.js": "/SkillSwapHubReact/static/js/main.c0353cf4.js",
+    "main.js": "/SkillSwapHubReact/static/js/main.6684fc66.js",
     "static/media/introtopainting.png": "/SkillSwapHubReact/static/media/introtopainting.fbbb48208aa8effc4a8a.png",
     "static/media/spanishbasics.png": "/SkillSwapHubReact/static/media/spanishbasics.924b4a6ad0b75aecc8e5.png",
     "static/media/shareskills.png": "/SkillSwapHubReact/static/media/shareskills.1a7f141002ed7fd6d888.png",
@@ -22,10 +22,10 @@
     "static/media/search.png": "/SkillSwapHubReact/static/media/search.f1610bb2e52abce602a1.png",
     "index.html": "/SkillSwapHubReact/index.html",
     "main.51bb18ac.css.map": "/SkillSwapHubReact/static/css/main.51bb18ac.css.map",
-    "main.c0353cf4.js.map": "/SkillSwapHubReact/static/js/main.c0353cf4.js.map"
+    "main.6684fc66.js.map": "/SkillSwapHubReact/static/js/main.6684fc66.js.map"
   },
   "entrypoints": [
     "static/css/main.51bb18ac.css",
-    "static/js/main.c0353cf4.js"
+    "static/js/main.6684fc66.js"
   ]
 }
