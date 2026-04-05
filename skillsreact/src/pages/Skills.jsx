@@ -8,7 +8,7 @@ import SkillCard from "../components/SkillCard";
 
 import heroImage from "../images/shareskills.png";
 
-const API_URL = "https://demo-backend-0ji8.onrender.com/api/skills";
+const API_URL = "https://skillswaphubbackend.onrender.com/api/skills";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);

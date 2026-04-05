@@ -4,7 +4,7 @@ import "../css/SkillCard.css";
 const SkillCard = ({ skill }) => {
   const imageSrc = skill.image
     ? skill.image
-    : `https://demo-backend-0ji8.onrender.com/images/${skill.img_name}`;
+    : `https://skillswaphubbackend.onrender.com/images/${skill.img_name}`;
 
   return (
     <article className="skill-card">

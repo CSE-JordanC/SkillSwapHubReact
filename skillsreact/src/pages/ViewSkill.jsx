@@ -10,7 +10,7 @@ import SimilarSkillCard from "../components/SimilarSkillCard";
 import webImage from "../images/introtoweb.png";
 import paintImage from "../images/introtopainting.png";
 
-const API_URL = "https://demo-backend-0ji8.onrender.com/api/skills";
+const API_URL = "https://skillswaphubbackend.onrender.com/api/skills";
 
 const ViewSkill = () => {
   const { id } = useParams();
@@ -67,7 +67,7 @@ const ViewSkill = () => {
           <section className="main-column">
             <div className="skill-hero">
               <img
-                src={`https://demo-backend-0ji8.onrender.com/images/${skill.img_name}`}
+                src={`https://skillswaphubbackend.onrender.com/images/${skill.img_name}`}
                 alt={skill.title}
               />
 
