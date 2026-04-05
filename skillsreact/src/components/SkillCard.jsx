@@ -2,9 +2,14 @@ import { Link } from "react-router-dom";
 import "../css/SkillCard.css";
 
 const SkillCard = ({ skill }) => {
+  const imageSrc = skill.image
+    ? skill.image
+    : `https://demo-backend-0ji8.onrender.com/images/${skill.img_name}`;
+
   return (
     <article className="skill-card">
-      <img className="skill-img" src={skill.image} alt={skill.title} />
+      <img className="skill-img" src={imageSrc} alt={skill.title} />
+
       <div className="skill-body">
         <h3 className="skill-title">{skill.title}</h3>
         <div className="skill-category">
@@ -13,7 +18,8 @@ const SkillCard = ({ skill }) => {
         <div className="skill-meta">
           {skill.instructor} • {skill.lessons} lessons
         </div>
-        <Link to="/viewskills" className="btn btn-green">
+
+        <Link to={`/viewskills/${skill._id}`} className="btn btn-green">
           View
         </Link>
       </div>

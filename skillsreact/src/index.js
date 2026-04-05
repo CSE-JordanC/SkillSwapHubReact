@@ -16,7 +16,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="skills" element={<Skills />} />
           <Route path="news" element={<News />} />
-          <Route path="viewskills" element={<ViewSkill />} />
+          <Route path="viewskills/:id" element={<ViewSkill />} />
         </Route>
       </Routes>
     </BrowserRouter>
