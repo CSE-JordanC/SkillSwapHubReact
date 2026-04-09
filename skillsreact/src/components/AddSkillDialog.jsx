@@ -2,23 +2,19 @@ import { useState } from "react";
 import "../css/AddSkillDialog.css";
 
 const API_URL = "https://skillswaphubbackend.onrender.com/api/skills";
-const IMAGE_BASE = "https://skillswaphubbackend.onrender.com/images/";
-
-const imageOptions = [
-  "guitarbasics.png",
-  "introtoweb.png",
-  "personalfitness.png",
-  "digitalphotography.png",
-  "spanishbasics.png",
-  "introtopainting.png",
-  "songwriting_essentials.png",
-  "portrait_lighting.png",
-  "intro_to_illustrator.png",
-];
 
 const AddSkillDialog = ({ closeAddDialog, onAdded }) => {
   const [status, setStatus] = useState("");
-  const [selectedImage, setSelectedImage] = useState("guitarbasics.png");
+  const [prevSrc, setPrevSrc] = useState("");
+
+  const uploadImage = (e) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      setPrevSrc(URL.createObjectURL(file));
+    } else {
+      setPrevSrc("");
+    }
+  };
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -29,30 +25,22 @@ const AddSkillDialog = ({ closeAddDialog, onAdded }) => {
       return;
     }
 
-    setStatus("Sending...");
-
     const formData = new FormData(form);
-    const payload = Object.fromEntries(formData.entries());
-    payload.lessons = Number(payload.lessons);
+    setStatus("Sending...");
 
     try {
       const response = await fetch(API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
       const data = await response.json();
 
       if (response.ok) {
-        const createdSkill = data.skill || data.item || data;
         setStatus("Skill added successfully.");
-        onAdded(createdSkill);
+        onAdded(data);
         form.reset();
-        setSelectedImage("guitarbasics.png");
+        setPrevSrc("");
       } else {
         setStatus(data.error || "Error adding skill.");
       }
@@ -89,21 +77,6 @@ const AddSkillDialog = ({ closeAddDialog, onAdded }) => {
               minLength={3}
               maxLength={40}
             />
-
-            <label htmlFor="img_name">Skill Image</label>
-            <select
-              id="img_name"
-              name="img_name"
-              value={selectedImage}
-              onChange={(e) => setSelectedImage(e.target.value)}
-              required
-            >
-              {imageOptions.map((img) => (
-                <option key={img} value={img}>
-                  {img}
-                </option>
-              ))}
-            </select>
 
             <label htmlFor="category">Category</label>
             <input
@@ -154,6 +127,20 @@ const AddSkillDialog = ({ closeAddDialog, onAdded }) => {
               maxLength={200}
             />
 
+            <label htmlFor="img">Select Image</label>
+            <input
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+              onChange={uploadImage}
+              required
+            />
+
+            <p id="img-prev-section">
+              {prevSrc ? <img id="img-prev" src={prevSrc} alt="Preview" /> : null}
+            </p>
+
             <button type="submit" className="btn btn-primary add-skill-submit">
               Submit Skill
             </button>
@@ -162,15 +149,6 @@ const AddSkillDialog = ({ closeAddDialog, onAdded }) => {
               {status}
             </p>
           </form>
-
-          <div className="add-skill-preview">
-            <h3>Preview</h3>
-            <img
-              src={`${IMAGE_BASE}${selectedImage}`}
-              alt="Selected skill preview"
-            />
-            <p>The image preview stays small so it fits the design cleanly.</p>
-          </div>
         </div>
       </div>
     </div>
