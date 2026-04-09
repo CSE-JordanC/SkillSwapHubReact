@@ -6,12 +6,45 @@ const Hero = ({
   subtitle,
   primaryText,
   primaryLink,
+  primaryOnClick,
   secondaryText,
   secondaryLink,
   image,
   alt,
   compact = false,
 }) => {
+  const renderPrimaryAction = () => {
+    if (!primaryText) return null;
+
+    if (primaryOnClick) {
+      return (
+        <button type="button" className="btn btn-primary" onClick={primaryOnClick}>
+          {primaryText}
+        </button>
+      );
+    }
+
+    if (primaryLink) {
+      return (
+        <Link className="btn btn-primary" to={primaryLink}>
+          {primaryText}
+        </Link>
+      );
+    }
+
+    return null;
+  };
+
+  const renderSecondaryAction = () => {
+    if (!secondaryText || !secondaryLink) return null;
+
+    return (
+      <Link className="btn btn-secondary" to={secondaryLink}>
+        {secondaryText}
+      </Link>
+    );
+  };
+
   if (compact) {
     return (
       <section className="hero-compact">
@@ -19,16 +52,8 @@ const Hero = ({
           <h1 className="hero-compact-title">{title}</h1>
           <p className="hero-compact-sub">{subtitle}</p>
           <div className="hero-compact-actions">
-            {secondaryText && secondaryLink && (
-              <Link className="btn btn-secondary" to={secondaryLink}>
-                {secondaryText}
-              </Link>
-            )}
-            {primaryText && primaryLink && (
-              <Link className="btn btn-primary" to={primaryLink}>
-                {primaryText}
-              </Link>
-            )}
+            {renderSecondaryAction()}
+            {renderPrimaryAction()}
           </div>
         </div>
 
@@ -45,16 +70,8 @@ const Hero = ({
         <h1 className="hero-title">{title}</h1>
         <p className="hero-sub">{subtitle}</p>
         <div className="hero-cta">
-          {secondaryText && secondaryLink && (
-            <Link to={secondaryLink} className="btn btn-secondary">
-              {secondaryText}
-            </Link>
-          )}
-          {primaryText && primaryLink && (
-            <Link to={primaryLink} className="btn btn-primary">
-              {primaryText}
-            </Link>
-          )}
+          {renderSecondaryAction()}
+          {renderPrimaryAction()}
         </div>
       </div>
 

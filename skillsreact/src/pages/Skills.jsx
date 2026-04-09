@@ -5,6 +5,7 @@ import Hero from "../components/Hero";
 import SearchBar from "../components/SearchBar";
 import Pagination from "../components/Pagination";
 import SkillCard from "../components/SkillCard";
+import AddSkillDialog from "../components/AddSkillDialog";
 
 import heroImage from "../images/shareskills.png";
 
@@ -15,6 +16,8 @@ const Skills = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [showAddDialog, setShowAddDialog] = useState(false);
+  const [postResult, setPostResult] = useState("");
 
   useEffect(() => {
     const loadSkills = async () => {
@@ -48,6 +51,13 @@ const Skills = () => {
     });
   }, [skills, query]);
 
+  const handleAddSkill = (newSkill) => {
+    setSkills((prev) => [...prev, newSkill]);
+    setQuery("");
+    setPostResult("Skill added successfully.");
+    setShowAddDialog(false);
+  };
+
   return (
     <main id="skills" className="main-content skills-page">
       <Hero
@@ -55,7 +65,7 @@ const Skills = () => {
         title="Post Your Own Community Skill"
         subtitle="Help the community by sharing your very own hand crafted skill."
         primaryText="Post Skill"
-        primaryLink="/skills"
+        primaryOnClick={() => setShowAddDialog(true)}
         image={heroImage}
         alt="Community skill artwork"
       />
@@ -65,6 +75,8 @@ const Skills = () => {
       </div>
 
       <SearchBar query={query} setQuery={setQuery} />
+
+      {postResult && <p className="post-result">{postResult}</p>}
 
       <section className="cards-section">
         <div className="cards-grid">
@@ -85,6 +97,13 @@ const Skills = () => {
       </section>
 
       <Pagination />
+
+      {showAddDialog && (
+        <AddSkillDialog
+          closeAddDialog={() => setShowAddDialog(false)}
+          onAdded={handleAddSkill}
+        />
+      )}
     </main>
   );
 };
