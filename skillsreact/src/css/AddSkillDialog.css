@@ -153,6 +153,35 @@
     padding: 20px 22px;
     gap: 8px;
   }
+
+  #edit-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  #edit-links button {
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  #img-prev-section {
+    margin: 8px 0 0;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #img-prev {
+    max-width: 220px;
+    max-height: 180px;
+    border-radius: 12px;
+    object-fit: cover;
+    display: block;
+  }
   
   @media only screen and (max-width: 900px) {
     .add-skill-grid {

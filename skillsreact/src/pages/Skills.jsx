@@ -58,6 +58,18 @@ const Skills = () => {
     setShowAddDialog(false);
   };
 
+  const updateSkillInList = (updatedSkill) => {
+    setSkills((prev) =>
+      prev.map((skill) =>
+        skill._id === updatedSkill._id ? updatedSkill : skill
+      )
+    );
+  };
+
+  const deleteSkillFromList = (deletedSkill) => {
+    setSkills((prev) => prev.filter((skill) => skill._id !== deletedSkill._id));
+  };
+
   return (
     <main id="skills" className="main-content skills-page">
       <Hero
@@ -86,7 +98,13 @@ const Skills = () => {
 
           {!loading && !error && filteredSkills.length > 0 &&
             filteredSkills.map((skill) => (
-              <SkillCard key={skill._id} skill={skill} />
+              <SkillCard
+                key={skill._id}
+                skill={skill}
+                showDialog={true}
+                updateSkillInList={updateSkillInList}
+                deleteSkillFromList={deleteSkillFromList}
+              />
             ))
           }
 

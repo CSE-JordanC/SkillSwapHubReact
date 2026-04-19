@@ -165,6 +165,10 @@
     font-weight: 700;
     padding: 24px 0;
   }
+
+  .skill-card.clickable {
+    cursor: pointer;
+  }
   
   @media only screen and (max-width: 900px) {
     .skills-page .search-actions {
