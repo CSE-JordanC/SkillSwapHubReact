@@ -1,12 +1,10 @@
 {
   "files": {
     "main.css": "/SkillSwapHubReact/static/css/main.684c3dfe.css",
-    "main.js": "/SkillSwapHubReact/static/js/main.515265f5.js",
-    "static/media/introtopainting.png": "/SkillSwapHubReact/static/media/introtopainting.fbbb48208aa8effc4a8a.png",
+    "main.js": "/SkillSwapHubReact/static/js/main.981909b4.js",
     "static/media/shareskills.png": "/SkillSwapHubReact/static/media/shareskills.1a7f141002ed7fd6d888.png",
     "static/media/communityspotlight.png": "/SkillSwapHubReact/static/media/communityspotlight.56d1f08a6ad35db3a64f.png",
     "static/media/skillsharenight.png": "/SkillSwapHubReact/static/media/skillsharenight.78101a4185a7e617ce88.png",
-    "static/media/introtoweb.png": "/SkillSwapHubReact/static/media/introtoweb.3d22704f75be71d2e891.png",
     "static/media/featurejamie.png": "/SkillSwapHubReact/static/media/featurejamie.ff773bf0993bc37c5c43.png",
     "static/media/platformupdate.png": "/SkillSwapHubReact/static/media/platformupdate.7ccd35411851fbf5e537.png",
     "static/media/learnandconnect.png": "/SkillSwapHubReact/static/media/learnandconnect.4cb48e3f151c3f22a72d.png",
@@ -15,10 +13,10 @@
     "static/media/search.png": "/SkillSwapHubReact/static/media/search.f1610bb2e52abce602a1.png",
     "index.html": "/SkillSwapHubReact/index.html",
     "main.684c3dfe.css.map": "/SkillSwapHubReact/static/css/main.684c3dfe.css.map",
-    "main.515265f5.js.map": "/SkillSwapHubReact/static/js/main.515265f5.js.map"
+    "main.981909b4.js.map": "/SkillSwapHubReact/static/js/main.981909b4.js.map"
   },
   "entrypoints": [
     "static/css/main.684c3dfe.css",
-    "static/js/main.515265f5.js"
+    "static/js/main.981909b4.js"
   ]
 }
