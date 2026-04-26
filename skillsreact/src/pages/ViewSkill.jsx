@@ -7,14 +7,12 @@ import SidebarActions from "../components/SidebarActions";
 import ReviewCard from "../components/ReviewCard";
 import SimilarSkillCard from "../components/SimilarSkillCard";
 
-import webImage from "../images/introtoweb.png";
-import paintImage from "../images/introtopainting.png";
-
 const API_URL = "https://skillswaphubbackend.onrender.com/api/skills";
 
 const ViewSkill = () => {
   const { id } = useParams();
   const [skill, setSkill] = useState(null);
+  const [similarSkills, setSimilarSkills] = useState([]); // ✅ added
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
@@ -34,6 +32,27 @@ const ViewSkill = () => {
 
     loadSkill();
   }, [id]);
+
+  // ✅ NEW: Load similar skills
+  useEffect(() => {
+    const loadSimilar = async () => {
+      try {
+        const response = await axios.get(API_URL);
+
+        const filtered = response.data
+          .filter((s) => s._id !== skill._id) // exclude current skill
+          .slice(0, 2); // limit to 2
+
+        setSimilarSkills(filtered);
+      } catch (err) {
+        console.error("Error loading similar skills:", err);
+      }
+    };
+
+    if (skill) {
+      loadSimilar();
+    }
+  }, [skill]);
 
   if (loading) {
     return (
@@ -115,8 +134,14 @@ const ViewSkill = () => {
               <h2>Similar Skills</h2>
 
               <div className="similar-grid">
-                <SimilarSkillCard image={webImage} title="Intro to Web Design" id={2} />
-                <SimilarSkillCard image={paintImage} title="Intro to Painting" id={6} />
+                {similarSkills.map((s) => (
+                  <SimilarSkillCard
+                    key={s._id}
+                    image={`https://skillswaphubbackend.onrender.com/images/${s.img_name}`}
+                    title={s.title}
+                    id={s._id}
+                  />
+                ))}
               </div>
             </section>
           </section>
